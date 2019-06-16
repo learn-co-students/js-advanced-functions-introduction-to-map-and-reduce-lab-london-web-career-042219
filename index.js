@@ -57,4 +57,21 @@ function reduceToAnyTrue(array) {
     }
   }
   return returnValue;
+}function map(array, func) {
+  let returnArray = [];
+  for (let i = 0; i < array.length; i++) {
+    returnArray.push(func(array[i]));
+  }
+  return returnArray;
+}
+
+function reduce(array, func, startWith) {
+  let r = !!startWith ? startWith : array[0];
+  let i = !!startWith ? 0 : 1;
+
+   for (; i < array.length; i++) {
+    r = func(array[i], r);
+  }
+
+   return r;
 }
